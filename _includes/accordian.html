@@ -1,0 +1,33 @@
+<div class="sec curriculum-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="accordion" id="accordionExample">
+                    {% assign curriculums = site.curriculum | where: "promoted", empty | sort: "weight" %}
+        {% for curriculum in curriculums %}
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading{{curriculum.weight }}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{curriculum.weight }}" aria-expanded="false" aria-controls="collapse{{curriculum.weight }}">
+                            {{ curriculum.title }}
+                        </button>
+                      </h2>
+                      <div id="collapse{{curriculum.weight }}" class="accordion-collapse collapse {{curriculum.Collapse }}" aria-labelledby="heading{{curriculum.weight }}" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <h3>{{ curriculum.jobtitle }}</h3>
+                            {% if curriculum.image %}
+                            <div class="curriculum-image">
+                                <img alt="{{ curriculum.title }}" class="img-fluid mb-2" src="{{ curriculum.image | relative_url }}" />
+                            </div>
+                            {% endif %}
+                            <p>{{ curriculum.content }}</p>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+

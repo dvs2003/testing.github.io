@@ -1,0 +1,55 @@
+<!-- start testimonial -->
+<section class="testimonial-section section-padding">
+    <div class="container">
+       <div class="row">
+          <div class="col-12 text-center">
+             <div class="block-content">
+                <h2 class="block-heading">
+                   <span class="sub-heading">Customer Sotries</span>
+                   <strong><span class="highlight">20k+ Customers</span> Trust Us</strong>
+                </h2>
+             </div>
+          </div><!--  ./col -->
+       </div><!-- ./row -->
+       <div class="gap"></div>
+       <div class="row">
+          <div class="col-12">
+            <!-- start testimonial slider -->
+            {% if site.data.testimonials %}
+             <div class="tp-owl-carousel owl-carousel owl-theme" data-loop="true" data-items="1" data-margin="20"
+                data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800"
+                data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1"
+                data-mobile-device-nav="false" data-mobile-device-dots="false" data-sm-device="1" data-sm-device-nav="false"
+                data-sm-device-dots="false" data-sm-device2="1" data-sm-device2-nav="false" data-sm-device2-dots="false"
+                data-md-device="1" data-md-device-nav="false" data-md-device-dots="false" data-lg-device="1"
+                data-lg-device-dots="false" data-lg-device-nav="false">
+
+                {% for testimonial in site.data.testimonials %}
+                <div class="testimonial-item row align-items-center justify-content-between">
+                   <div class="col-md-5">
+                      <div class="thumb">
+                         <img src="{{ testimonial.large_thumb | relative_url }}" alt="{{ testimonial.title }}">
+                      </div>
+                   </div>
+                   <div class="col-md-6">
+                      <div class="quote-content-box">
+                         <div class="quote-icon">
+                            <img src="../assets/images/quote.png" alt="">
+                         </div>
+                         <p class="quote-desc">
+                            {{ testimonial.quote }}
+                         </p>
+                         <div class="author-info">
+                            <img src="{{ testimonial.brand_logo | relative_url }}" alt="">
+                            <p class="name"><span class="fw-600">{{ testimonial.author }}</span> / {{ testimonial.designation }}</p>
+                         </div>
+                      </div>
+                   </div>
+                </div><!-- end testimonial item  -->
+                {% endfor %}  
+             </div><!-- end testimonial-slider -->
+             {% endif %}
+          </div>
+       </div>
+    </div><!--  ./container  -->
+</section><!-- end testimonial section -->

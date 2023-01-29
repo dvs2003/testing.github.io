@@ -1,0 +1,22 @@
+{% if site.data.faqs %}
+<div class="accordion tp-accordion" id="faqAccordion">
+    {% for faq in site.data.faqs %}
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#{{ faq.collapse }}" aria-expanded="true" aria-controls="{{ faq.collapse }}">
+                {{ faq.title }}
+            </button>
+        </h2>
+        <div id="{{ faq.collapse }}" class="accordion-collapse collapse animated fadeInUp {% if faq.show %}show{% endif %}"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+               <p>
+                {{ faq.description }}
+               </p>
+            </div>
+        </div>
+    </div><!-- end accordion item -->
+    {% endfor %} 
+</div><!-- end accordion -->
+{% endif %}

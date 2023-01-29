@@ -1,0 +1,29 @@
+<!-- hero section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center gutter-30">
+            {% if page.intro_image %}
+            <div class="col-md-7 order-md-last">
+                <div class="hero-image-wrapper">
+                    <img class="hero-image img-fluid" src="{{ page.intro_image | relURL }}" alt="{{ page.title }}">
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-md-5 order-md-first">
+                <div class="banner-content">
+                    <h1 class="banner-title">Manage everything in <span class="highlight">one click</span></h1>
+                    <p class="mb-4 lead">
+                        No more switching between apps to get your daily industry news updates. Vincent
+                        eliminates
+                    </p>
+                    <a href="{{site.baseurl}}/contact/" class="btn btn-primary get-btn mb-4">Start Free Trial for 7 days</a>
+                    <p class="lead">
+                        * Coming soon on Android 
+                        <a href="{{site.baseurl}}/contact/" class="notify-btn px-1">Notify Me <i class="fas fa-arrow-right"></i></a>
+                    </p>
+                </div>
+            </div> <!-- ./col -->
+        </div> <!-- ./row -->
+    </div> <!-- ./container -->
+</section>
+<!-- end hero section -->

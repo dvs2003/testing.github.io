@@ -1,0 +1,58 @@
+<section class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="block-heading">
+                    Simple Pricing for all
+                </h2>
+            </div>
+        </div>
+        <div class="gap"></div>
+        <div class="row gutter-30">
+            {% for item in site.data.pricing %}
+            <div class="col-md-4">
+                <div class="price-single text-center">
+                    <div class="price-header">
+                       <h3 class="package"> {{item.title}} </h3>
+                       <p>{{item.subtitle}}</p>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="{{ item.link }}" class="btn btn-primary">{{item.button_text}}</a>
+                    </div>
+                    <div class="pricing-price">
+                        <h3>{{ item.price }} <span>{{ item.duration }}</span></h3>
+                    </div>
+                    <div class="price-content text-start">
+                        <ul>
+                            {% if item.feature1 %}
+                            <li>
+                                <i class="{{ item.icon }}"></i>
+                                {{ item.feature1 }}
+                            </li>
+                            {% endif %}
+                            {% if item.feature2 %}
+                            <li>
+                                <i class="{{ item.icon }}"></i>
+                               {{ item.feature2 }}
+                            </li>
+                            {% endif %}
+                            {% if item.feature3 %}
+                            <li>
+                                <i class="{{ item.icon }}"></i>
+                                {{ item.feature3 }}
+                            </li>
+                            {% endif %}
+                            {% if item.feature1 %}
+                            <li>
+                                <i class="{{ item.icon }}"></i>
+                                {{ item.feature4 }}
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- ./col -->
+            {% endfor %}
+        </div><!-- ./row -->
+    </div>
+</section><!-- ./section -->

@@ -1,0 +1,35 @@
+<section class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="block-heading">
+                    Our Expert Team
+                </h2>
+            </div>
+        </div>
+        <div class="gap"></div>
+        <div class="row gutter-30">
+            {% assign weighted_teams = site.teams | sort: "weight" %}
+                {% for team in weighted_teams limit:3 %}
+                <div class="col-md-4">
+                    <div class="team-single {% if team.active %}active{% endif %}">
+                        {% if team.thumb %}
+                        <div class="team-thumb">
+                            <img width="356" height="374" src="{{ team.thumb }}" alt="{{ team.title }}">
+                            <div class="team-social">
+                                <a href="{{ team.fb }}"><i class="fab fa-facebook-f"></i></a>
+                                <a href="{{ team.twi }}"><i class="fab fa-twitter"></i></a>
+                                <a href="{{ team.lin }}"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="team-content">
+                            <span class="title">{{ team.title }}</span>
+                            <p class="designation">{{ team.designation }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section><!-- ./section -->
