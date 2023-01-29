@@ -56,6 +56,6 @@ exclude:
   - Rakefile
 
 # for github pages setup uncomment the code and set to your domain
-domain: testing.github.io      # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://testing.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+domain: dvs2003.github.io      # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://dvs2003.github.io  # the base hostname and protocol for your site, e.g. http://example.com
 baseurl: /testing.github.io/       # place folder name if the site is served in a subfolder   
